@@ -1,29 +1,30 @@
 const input = document.querySelector(".toDoInput");
 const inputButton = document.querySelector(".inputButton");
 const addToDoHere = document.querySelector(".dynamicallyAddToDo");
-let storeToDo = [];
-
+let storeToDo = JSON.parse(localStorage.getItem("todos")) || [];
+displayToDo();
 inputButton.addEventListener("click", function (e) {
   addToList(e);
 });
 
 function addToList(e) {
-  e.preventDefault();
-  if (input.value.trim() === "") {
-    return;
-  }
-  storeToDo.push({
-    title: input.value,
-    id: storeToDo.length,
-    isChecked: false,
-  });
-  input.value = "";
+    e.preventDefault();
+    if (input.value.trim() === "") {
+        return;
+    }
+    storeToDo.push({
+        title: input.value,
+        id: storeToDo.length,
+        isChecked: false,
+    });
+    input.value = "";
+    localStorage.setItem("todos", JSON.stringify(storeToDo));
   displayToDo();
 }
 
 function displayToDo() {
   addToDoHere.innerHTML = "";
-
+console.log(storeToDo)
   storeToDo.forEach((el) => {
     const todoItem = document.createElement("div");
     todoItem.className = "todoItem";
@@ -62,6 +63,7 @@ function displayToDo() {
 
 function deleteToDo(id) {
   storeToDo = storeToDo.filter((el) => el.id !== id);
+  localStorage.setItem("todos", JSON.stringify(storeToDo));
   displayToDo();
 }
 
@@ -69,6 +71,7 @@ function checkToDo(id) {
   storeToDo.forEach((el) => {
     if (el.id === id) {
       el.isChecked = !el.isChecked;
+      localStorage.setItem("todos", JSON.stringify(storeToDo));
       displayToDo();
     }
   });
