@@ -9,7 +9,7 @@ inputButton.addEventListener("click", function (e) {
 
 function addToList(e) {
   e.preventDefault();
-  if (input.value === "") {
+  if (input.value.trim() === "") {
     return;
   }
   storeToDo.push({
