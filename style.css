@@ -1,0 +1,111 @@
+/* Global Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Base Font Size */
+html {
+  font-size: 62.5%;
+}
+
+/* Body Styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ecebeb;
+  margin-top: 5rem;
+}
+
+/* Title Styles */
+.title {
+  font-size: 4.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #e34a33;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.toDoInput {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #e34a33;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  background-color: #fff;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+.toDoInput:active {
+  border: 2px solid #b63b28;
+}
+
+.inputButton {
+  margin-left: 1rem;
+  padding: 1.2rem 2rem;
+  background-color: #e34a33;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inputButton:hover {
+  background-color: #b63b28;
+}
+
+/* To-Do List Styles */
+.dynamicallyAddToDo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.todoText {
+  flex: 1;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.todoDeleteButton {
+  background: none;
+  border: none;
+  color: #cc0000;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.todoDeleteButton:hover {
+  color: #ff0000;
+}
+
+.checked {
+  text-decoration: line-through;
+}
