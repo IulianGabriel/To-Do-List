@@ -24,7 +24,6 @@ function addToList(e) {
 
 function displayToDo() {
   addToDoHere.innerHTML = "";
-console.log(storeToDo)
   storeToDo.forEach((el) => {
     const todoItem = document.createElement("div");
     todoItem.className = "todoItem";
